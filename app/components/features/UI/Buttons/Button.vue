@@ -1,8 +1,8 @@
 <template>
-  <div :class="$style.block">
+  <NuxtLink :to="link" :class="$style.block">
     <Icon :icon="icon" />
-    <span>{{ label }}</span>
-  </div>
+    <span :class="$style.label">{{ label }}</span>
+  </NuxtLink>
 </template>
 
 <style module lang="scss" src="./Button.module.scss" />
@@ -13,6 +13,7 @@ import { Icon } from "@iconify/vue";
 interface Props {
   icon: string;
   label: string;
+  link: string;
 }
 
 defineProps<Props>();

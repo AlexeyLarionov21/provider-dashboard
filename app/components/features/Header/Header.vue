@@ -1,8 +1,15 @@
 <template>
   <div :class="$style.container">
-    <a href="/" :class="$style.logo">
-      <img src="/assets/images/logo_s.png" alt="Logo" />
-    </a>
+    <div :class="$style['group-left']">
+      <a href="/" :class="$style.logo">
+        <img src="/assets/images/logo_s.png" alt="Logo" />
+      </a>
+      <Dropdown
+        :visible="isMenuOpen"
+        @toggle="isMenuOpen = !isMenuOpen"
+        @close="isMenuOpen = false"
+      />
+    </div>
 
     <div>
       <Nav />
@@ -33,7 +40,10 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 import Nav from "./UI/Nav.vue";
+import Dropdown from "../UI/Dropdowns/Dropdown.vue";
+
 const iconSize = 20;
+const isMenuOpen = ref(false);
 </script>
 
 <style module lang="scss" src="./Header.module.scss" />

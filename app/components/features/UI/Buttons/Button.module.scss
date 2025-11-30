@@ -1,0 +1,30 @@
+.block {
+  display: flex;
+  text-decoration: none;
+  color: white;
+  // background: #000b29;
+  border: #878d9e solid 1px;
+  padding: 7px 10px;
+  border-radius: var(--border-radius);
+  align-items: center;
+  gap: 7px;
+
+  .label {
+    font-size: 1rem;
+  }
+}
+
+.block:last-child {
+  background: rgb(235, 16, 0);
+  border: none;
+}
+
+@media (max-width: 1160px) {
+  .block {
+    padding: 5px 8px;
+  }
+
+  .block .label {
+    font-size: 0.85rem;
+  }
+}

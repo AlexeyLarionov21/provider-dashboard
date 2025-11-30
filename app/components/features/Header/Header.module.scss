@@ -1,11 +1,10 @@
 :root {
   --border-radius: 6px;
   --color-hover: #f1f1f1;
-  --padding-content: 20px;
+  --padding-content: 40px;
 }
 
 .container {
-  width: 1024px;
   display: flex;
   height: 40px;
 
@@ -13,6 +12,11 @@
   padding: var(--padding-content);
   align-items: center;
   justify-content: space-between;
+}
+
+.group-left {
+  display: flex;
+  gap: 10px;
 }
 
 .logo {
@@ -41,6 +45,8 @@
   border-radius: var(--border-radius);
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
   transition: border 0.3s ease;
+  width: 34px;
+  height: 34px;
 
   .logout-icon {
     color: #000b29;
@@ -57,39 +63,34 @@
   justify-content: center;
   color: #fff;
   background: #000b29;
-  padding: 7px 10px;
+  padding: 0 10px;
   border-radius: var(--border-radius);
   gap: 4px;
   font-weight: 600;
   cursor: pointer;
+  height: 34px;
 }
 
 .icon-call {
   color: white;
 }
 
-@media (max-width: 920px) {
-  .container {
-    padding: 10px;
+@media (max-width: 1160px) {
+  .logo img {
+    height: 90%;
   }
 
+  .right-sector {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 920px) {
   .logo img {
     height: 80%;
   }
 
-  .support-number-block {
-    padding: 4px 7px;
-    font-size: 0.8rem;
-    font-weight: 400;
-  }
-
-  .icon-call {
-    width: 16px;
-    height: 16px;
-  }
-
-  .logout-button {
-    width: 24px;
-    height: 24px;
+  .right-sector {
+    gap: 10px;
   }
 }

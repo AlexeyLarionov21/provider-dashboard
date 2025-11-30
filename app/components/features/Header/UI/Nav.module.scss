@@ -3,26 +3,30 @@
   margin: 0;
   padding: 0;
   display: flex;
+  height: 34px;
   width: 100%;
   max-width: 600px;
   gap: 40px;
   align-items: center;
+  font-size: 1rem;
 }
 
 .li_element {
   display: flex;
   border-radius: var(--border-radius);
-  padding: 5px 10px;
+  padding: 0 10px;
+  max-height: 34px;
+  height: 100%;
   transition: all 0.3s ease;
   margin-right: 0;
   color: #000b29;
 
   &.active {
-    background: #009bb6;
+    background: rgb(0, 141, 206);
     color: white;
 
     &:hover {
-      background: #009bb6;
+      background: rgb(0, 141, 206);
     }
   }
 
@@ -39,30 +43,15 @@
   color: inherit;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1160px) {
   .menu {
-    gap: 25px;
+    gap: 15px;
+    font-size: 0.85rem;
   }
 }
 
 @media (max-width: 920px) {
   .menu {
-    gap: 10px;
-  }
-
-  .li_element {
-    padding: 5px 8px;
-    margin-right: -4px;
-  }
-}
-
-@media (max-width: 480px) {
-  .menu {
-    gap: 8px;
-  }
-
-  .li_element {
-    padding: 5px 6px;
-    margin-right: -6px;
+    display: none;
   }
 }

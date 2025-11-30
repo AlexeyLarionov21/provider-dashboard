@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding-content);
+  width: 100%;
+  color: rgb(110, 110, 110);
+}
+
+.left {
+  display: block;
+}
+
+.right {
+  display: block;
+}
+
+.title {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.group-links {
+  display: flex;
+  gap: 10px;
+}
+
+.link {
+  display: flex;
+  background: black;
+  padding: 6px;
+  border-radius: var(--border-radius);
+  color: white;
+}
+
+.telegram {
+  background: #0088cc;
+}
+
+.whatsapp {
+  background: #12c253;
+}
+
+.twitter {
+  background: #000000;
+}
