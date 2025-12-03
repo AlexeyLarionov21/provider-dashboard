@@ -25,13 +25,14 @@ body {
 }
 
 .page {
-  display: block;
+  display: flex;
   max-width: 100%;
   padding: 24px;
   min-width: 0;
   box-sizing: border-box;
   justify-content: center;
   height: 100dvh;
+  align-items: center;
 }
 
 .container {
