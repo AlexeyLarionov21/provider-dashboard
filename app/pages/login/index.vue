@@ -16,11 +16,22 @@
           <Icon icon="material-symbols:lock-outline" width="28" height="28" />
           <span>Личный кабинет</span>
         </div>
-        <div class="input-group">
-          <Input v-model="contractInput" />
-          <Input v-model="passwordInput" type="password" placeholder="Пароль" />
+        <div :class="$style['input-group']">
+          <Input
+            v-model="contractInput"
+            :isInvalid="!contractValidation.isValid"
+            :textError="contractValidation.message"
+            icon="material-symbols-light:contract-outline"
+          />
+          <Input
+            v-model="passwordInput"
+            type="password"
+            placeholder="Пароль"
+            icon="fluent:password-24-regular"
+          />
+
+          <button :class="$style['button-login']">Войти</button>
         </div>
-        <button>Enter</button>
       </div>
     </div>
   </div>
@@ -31,10 +42,16 @@
 <script setup lang="ts">
 import Input from "~/components/features/UI/Inputs/Input.vue";
 import { Icon } from "@iconify/vue";
-import { ref } from "vue";
+import { computed, ref } from "vue";
+import { validator, isEmptyField } from "@/utils/validator";
+import type { ValidationResult } from "~/types/validation";
 
 const contractInput = ref("");
 const passwordInput = ref("");
+
+const contractValidation = computed<ValidationResult>(() =>
+  validator(contractInput.value)
+);
 
 definePageMeta({
   layout: "empty",

@@ -1,5 +1,7 @@
 export const userData = [
   {
-    id: 998974512
-  }
+    contract: "12345",
+    password: "pass123",
+    name: "Иван Иванов",
+  },
 ];
